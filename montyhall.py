@@ -1,4 +1,4 @@
-import random
+import random, matplotlib
 
 n = int(input("Enter number of simulations to run: "))
 
