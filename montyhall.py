@@ -40,6 +40,6 @@ pylab.title("Comparison of switch vs stick strategy for Monty Hall Problem over 
 pylab.plot(np.arange(0,n), stickwinlist, 'b', label='Stick')
 pylab.plot(np.arange(0,n), switchwinlist, 'g', label='Switch')
 pylab.legend(loc='best')
-pylab.xlabel("Number of wins")
-pylab.ylabel("Number of trials")
+pylab.ylabel("Number of wins")
+pylab.xlabel("Number of trials")
 pylab.show()
