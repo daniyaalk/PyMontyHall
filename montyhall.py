@@ -1,10 +1,12 @@
-import random, matplotlib
+import random, pylab
 
 n = int(input("Enter number of simulations to run: "))
 
 i = 0
 switchwin = 0
 stickwin = 0
+stickwinlist = []
+switchwinlist = []
 
 while i < n:
 
@@ -21,6 +23,9 @@ while i < n:
     else:
         switchwin += 1
         print("Switching initial option is the winning choice")
+
+    stickwinlist.append(stickwin)
+    switchwinlist.append(switchwin)
 
     print("Score so far: " if (i!=n-1) else "Final Score")
     print("Times won by sticking to initial choice: " + str(stickwin))
