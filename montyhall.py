@@ -1,16 +1,13 @@
 import random
 
-i = 0
-n=1000
+n = int(input("Enter number of simulations to run: "))
 
-count = [0, 0, 0]
-sum = 0
+i = 0
+switchwin = 0
+stickwin = 0
 
 while i < n:
-    number = random.randint(0,2)
-    sum += number
-    count[number] += 1
-    i += 1
-
-print(count)
-print("Average = " + str(sum/n))
+    winningdoor = random.randint(1,3)
+    doorchosen = random.randint(1,3)
+    print(str(winningdoor)+"=>"+str(doorchosen) + "WIN" if (winningdoor==doorchosen) else "LOSS")
+    i+=1
