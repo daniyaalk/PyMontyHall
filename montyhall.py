@@ -1,6 +1,7 @@
 import random, pylab, numpy as np
 
 n = int(input("Enter number of simulations to run: "))
+a = int(input("Enter door count: "))
 
 i = 0
 switchwin = 0
@@ -13,8 +14,8 @@ while i < n:
     print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
     print("Simulation number: " + str(i+1))
 
-    winningdoor = random.randint(1,3)
-    doorchosen = random.randint(1,3)
+    winningdoor = random.randint(1,a)
+    doorchosen = random.randint(1,a)
 
     # If doorchosen == winningdoor, stickwin will be the winning choise, otherwise switchwin
     if doorchosen == winningdoor:
@@ -42,4 +43,10 @@ pylab.plot(np.arange(0,n), switchwinlist, 'g', label='Switch')
 pylab.legend(loc='best')
 pylab.ylabel("Number of wins")
 pylab.xlabel("Number of trials")
+print("=============================================")
+result = ((switchwin)/n)
+expectation = ((a-1)/a)
+print("Simulated probability of winning by switching: " + str(result))
+print("Expected probability: " + str(expectation))
+print("Error: " + str((result-expectation)*100/expectation) + "%")
 pylab.show()
